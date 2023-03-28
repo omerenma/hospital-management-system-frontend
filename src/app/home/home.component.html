@@ -1,0 +1,86 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="header">
+      <span class="medical">Medical</span>
+      <span class="healthcare">Health care</span>
+      <span class="doctor">Doctor</span>
+      <span class="login" (click)="showLogin()">Login</span>
+
+    </div>
+    <div class="body">
+      <h2>Hospitam Management System</h2>
+      <h1>Automating The Hospital Process</h1>
+      <div class="logo">
+        <span>HMS</span>
+      </div>
+    </div>
+    </div>
+
+    <div class="about">
+      <h1>About Us</h1>
+      <img class="about-image" src="../../assets/tablet-g844c161bd_1920-removebg-preview.png" alt=""/>
+      <span>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis gravida neque convallis a. Viverra aliquet eget sit amet. Rhoncus dolor purus non enim. Nibh tellus molestie nunc non blandit.
+      </span>
+    </div>
+
+    <div class="team">
+      <div class="team-header">
+        <h1>OUR TEAM</h1>
+      </div>
+
+      <div class="team-container">
+
+        <div class="item">
+          <img class="item-image"  src="../../assets/doctor-gb5d949ef8_1920-removebg-preview.png" alt="" />
+          <span>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis gravida neque convallis a. Viverra aliquet eget sit amet. Rhoncus dolor purus non enim. Nibh tellus molestie nunc non blandit.
+          </span>
+        </div>
+        <div class="item">
+          <img class="item-image"  src="../../assets/hospital-gefe67f5fe_1920.jpg" alt="" />
+          <span>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis gravida neque convallis a. Viverra aliquet eget sit amet. Rhoncus dolor purus non enim. Nibh tellus molestie nunc non blandit.
+          </span>
+        </div>
+        <div class="item">
+          <img class="item-image"  src="../../assets/isolated-gafd35c79e_1920-removebg-preview.png" alt="" />
+          <span>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis gravida neque convallis a. Viverra aliquet eget sit amet. Rhoncus dolor purus non enim. Nibh tellus molestie nunc non blandit.
+          </span>
+        </div>
+        <div class="item">
+          <img class="item-image"  src="../../assets/nurse-g7ff418c7c_1920.jpg" alt="" />
+          <span>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis gravida neque convallis a. Viverra aliquet eget sit amet. Rhoncus dolor purus non enim. Nibh tellus molestie nunc non blandit.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-item">
+
+        <h1>HmS</h1>
+        <span>
+        &copy; 2023 Reserved. All rights reserved.
+        </span>
+      </div>
+    </div>
+
+</div>
+
+<div class="login-container" *ngIf="close" >
+    <div class="login-item">
+      <div class="cancel-button" >
+        <button class="close" (click)="showLogin()">Close</button>
+      </div>
+      <div class="login-input">
+        <h1>Login</h1>
+        <input type="text" placeholder="Enter email">
+        <input type="password" placeholder="Enter password">
+        <button class="login-btn">Login</button>
+        <span>Ask to be registered</span>
+      </div>
+    </div>
+</div>

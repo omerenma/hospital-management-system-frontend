@@ -1,0 +1,234 @@
+.container {
+  margin: 30px;
+  background-color: #ebedf9;
+  height: 70px;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.navigation span{
+  margin: 25px;
+}
+.navigation span:hover{
+  color: red ;
+}
+.icon{
+  font-size: x-large;
+  border-radius: 50%;
+}
+.welcome {
+  /* position: relative;
+  right: 170px; */
+}
+.navigation span:last-child{
+  cursor: pointer;
+  font-weight: bold;
+  color: red;
+}
+
+
+.patient-table {
+  margin:30px auto;
+  width: 80%;
+}
+table tr th {
+  text-align: left;
+}
+.table-header {
+background-color: #ebedf9;
+height: 50px;
+
+}
+tbody tr td {
+  text-align: left;
+}
+.search-patient {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:20px;
+  width: 100%;
+}
+.search-patient input {
+  width: 600px;
+  text-align: center;
+  height: 35px;
+
+}
+.add-patient{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 5px;
+  position:relative;
+  right: 400px;
+}
+.add-patient .add{
+  border: none;
+  background-color: orangered;
+  padding: 15px;
+  min-width: 100px;
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.plus{
+  font-size: 20px;
+  font-weight: 900;
+}
+.pagination-control{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+.form-container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.1);
+  top:0;
+  right: 0;
+  z-index: 999;
+}
+.add-patient-component{
+  width: 400px;
+  height: 100vh;
+  background-color: white;
+  position: absolute;
+  top:0;
+  right: 0;
+  padding:8px;
+}
+.add-patient-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+.add-patient-header h2 {
+  font-size: 20px;
+  font-weight: 900;
+  color: #2199e8;
+}
+.close-add-patient {
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 900;
+}
+.add-patient-header button {
+  border: none;
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  color: red;
+}
+form div{
+  width: inherit;
+  margin: 15px;
+}
+form div input {
+  width: 100%;
+  background-color: white;
+  height: 30px;
+}
+.submit{
+  border: none;
+  background-color: #2199e8;
+  padding: 10px;
+  position: relative;
+  left: 240px;
+  min-width: 150px;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+
+}
+label{
+  font-weight: bold;
+  font-size: 15px;
+}
+.switch {
+  text-align: right;
+  margin:20px;
+  margin-right: 250px;
+
+}
+.pagination-control{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+
+}
+tbody tr button{
+  background-color: orangered;
+  padding: 10px;
+  width: 100px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: 900;
+}
+
+.add-patient-component{
+  width: 400px;
+  height: 100vh;
+  background-color: white;
+  position: absolute;
+  top:0;
+  right: 0;
+  padding:8px;
+}
+.add-patient-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+.add-patient-header h2 {
+  font-size: 20px;
+  font-weight: 900;
+  color: #2199e8;
+}
+.close-add-patient {
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 900;
+}
+.add-patient-header button {
+  border: none;
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  color: red;
+}
+form div{
+  width: inherit;
+  margin: 15px;
+}
+form div input {
+  width: 100%;
+  background-color: white;
+  height: 30px;
+}
+.submit{
+  border: none;
+  background-color: #2199e8;
+  padding: 10px;
+  position: relative;
+  left: 240px;
+  min-width: 150px;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+
+}
+label{
+  font-weight: bold;
+  font-size: 15px;
+}

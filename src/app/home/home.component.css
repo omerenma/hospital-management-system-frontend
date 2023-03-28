@@ -1,0 +1,208 @@
+.wrapper {
+  position: relative;
+}
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../../assets/nurse-g7ff418c7c_1920.jpg');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.header {
+  margin:50px;
+
+}
+.medical{
+  background-color: #1344ff;
+  padding: 5px;
+  color:#fff;
+  border-radius: 5px;
+}
+.healthcare{
+  border: 1px solid #333;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 20px;
+}
+.doctor{
+  border: 1px solid #333;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 20px;
+}
+.login{
+  background-color: #1344ff;
+  padding: 5px;
+  color:#fff;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.body{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15%;
+  /* margin: 15px; */
+}
+.body h2 {
+width: 300px;
+font-size: 25px;
+font-weight: bold;
+color: #333;
+}
+.body h1{
+  font-size: 80px;
+  color:#333;
+  font-weight: bold;
+  text-align: right;
+  align-self: center;
+}
+.logo {
+  background-color: #1344ff;
+  padding: 50px;
+  color:#fff;
+  font-size: 30px;
+}
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 70vh;
+  margin: 50px;
+}
+.about h1{
+  color: #1344ff;
+  font-size: 75px;
+  font-weight: 900;
+}
+.about span{
+  width: 300px;
+  background-color: #1344ff;
+  color: #fff;
+  border-radius: 10px;
+  padding:30px;
+  margin: 50px;
+}
+.about-image{
+  height: 300px;
+  width: 300px;
+  object-fit: contain;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+}
+.team-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  columns: #333;
+}
+.team-container {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+margin: 10px;
+}
+.item {
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-image{
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.item span{
+  width: 300px;
+  margin:20px
+}
+.footer {
+  height: 50vh;
+  background-color: #c3c4ca;
+  width: 100%;
+  margin-top: 150px;
+  display: flex;
+  align-items: center;
+}
+.footer-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width:70%;
+}
+
+.login-container{
+  position: absolute;
+  top:0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.2);
+
+}
+.login-item{
+  height: 400px;
+  width: 400px;
+  margin: 100px;
+  background-color: #fff;
+}
+.cancel-button{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.close{
+  background-color: red;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  padding: 10px;
+  margin: 20px;
+  cursor: pointer;
+}
+.login-input{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px;
+}
+.login-input input{
+  width: 300px;
+  height: 30px;
+  margin: 10px;
+  border: none;
+  border-bottom: 1px solid #333;
+}
+.login-input button{
+  width: 300px;
+  height: 30px;
+  border: none;
+  background-color: #1344ff;
+  color: whitesmoke;
+  font-weight: bold;
+}
+.login-input h1{
+  color: #333;
+  font-weight: bolder;
+}
+.login-input input:focus{
+  border: none;
+}
+.login-input span {
+  font-weight: bold;
+  margin-top: 20px;
+  color: #333;
+}

@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="charts">
+    <div class="pie"  [chart]="donutCharts">
+
+    </div>
+
+    <div class="line" [chart]="linechart">
+
+    </div>
+  </div>
+
+
+  <table>
+    <tr class="treatment-header">
+      <th>Name of treatment</th>
+      <th>Drug administered</th>
+      <th>Doctor</th>
+      <th>Bill</th>
+      <th>Date</th>
+      <th>Paid</th>
+    </tr>
+    <tbody *ngFor="let item of collection | paginate: { itemsPerPage: 5, currentPage: p }">
+
+      <tr class="treatment-item">
+        <td>Administered Malaria</td>
+        <td>Cloroquine</td>
+        <td>John Doe</td>
+        <td>N20000</td>
+        <td>23-3-2023</td>
+        <td>Pending</td>
+      </tr>
+      <tr class="treatment-item">
+        <td>Administered Malaria</td>
+        <td>Cloroquine</td>
+        <td>John Doe</td>
+        <td>N20000</td>
+        <td>23-3-2023</td>
+        <td>Pending</td>
+      </tr>
+      <tr class="treatment-item">
+        <td>Administered Malaria</td>
+        <td>Cloroquine</td>
+        <td>John Doe</td>
+        <td>N20000</td>
+        <td>23-3-2023</td>
+        <td>Pending</td>
+      </tr>
+      <tr class="treatment-item">
+        <td>Administered Malaria</td>
+        <td>Cloroquine</td>
+        <td>John Doe</td>
+        <td>N20000</td>
+        <td>23-3-2023</td>
+        <td>Pending</td>
+      </tr>
+
+      <pagination-controls (pageChange)="p = $event" class="pagination-control"></pagination-controls>
+    </tbody>
+    </table>
+  </div>
+

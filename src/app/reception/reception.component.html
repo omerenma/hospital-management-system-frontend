@@ -1,0 +1,83 @@
+<div class="container" *ngIf="faUser">
+  <div class="navigation">
+    <span>Patients</span>
+    <span>Doctors</span>
+    <fa-icon [icon]="faUser" class="icon"></fa-icon>
+    <span class="welcome">Welcome Jane Doe</span>
+    <span>Logout</span>
+  </div>
+  <div class="search-patient">
+    <input type="search" name="" id="" title="search" placeholder="Search patient by admission number">
+  </div>
+  <table class="patient-table">
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Room admitted</th>
+      <th>Admission No.</th>
+      <th>ID no</th>
+      <th>Status</th>
+    </tr>
+    <tbody *ngFor="let item of collection | paginate: { itemsPerPage: 5, currentPage: p }">
+      <tr>
+        <td>John doe</td>
+        <td>Abuja</td>
+        <td>207</td>
+        <td>002343</td>
+        <td>256</td>
+        <td>Admitted</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="add-patient">
+    <!-- <div class="plus">+</div> -->
+    <button type="button" class="add" (click)="showAddPatient()">Add patient</button>
+  </div>
+
+
+  <pagination-controls (pageChange)="p = $event" class="pagination-control"></pagination-controls>
+</div>
+
+
+<div class="form-container" *ngIf="close">
+  <div class="add-patient-component" *ngIf="close">
+    <div class="add-patient-header">
+      <h2>Add patient</h2>
+      <button type="button" class="close-add-patient" (click)="showAddPatient()">X</button>
+    </div>
+
+    <div class="form">
+      <form>
+        <div>
+          <label for="name">Name</label>
+          <input title="name" type="text" name="" id="">
+        </div>
+        <div>
+          <label for="name">Email</label>
+          <input title="name" type="email" name="" id="">
+        </div>
+        <div>
+          <label for="name">Phone number</label>
+          <input title="name" type="text" name="" id="">
+        </div>
+        <div>
+          <label for="name">Residential address</label>
+          <input title="address" name="" id="" cols="30" rows="10">
+        </div>
+        <div>
+          <label for="name">Admission No.</label>
+          <input title="name" type="text" name="" id="">
+        </div>
+        <div>
+          <label for="name">Room No.</label>
+          <input title="name" type="text" name="" id="">
+        </div>
+        <div>
+          <label for="name">ID No.</label>
+          <input title="name" type="text" name="" id="">
+        </div>
+          <button type="button" class="submit" title="close">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
