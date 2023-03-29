@@ -1,1 +1,33 @@
-<p>sidebar works!</p>
+<div class="container">
+  <div class="nav">
+    <div class="header">
+      <fa-icon [icon]="faUser" class="icon"></fa-icon>
+      <h3 class="name">Onyebuchi Kingsley</h3>
+    </div>
+      <div class="icon-links" routerLink="/admin">
+        <fa-icon [icon]="home" class="icons link-icon"></fa-icon>
+        <span> Home</span>
+      </div>
+      <div class="icon-links" routerLink="/admin/users">
+        <fa-icon [icon]="user" class="icons link-icon"></fa-icon>
+        <span>Users</span>
+      </div>
+      <div class="icon-links">
+        <fa-icon [icon]="doctor" class="icons link-icon"></fa-icon>
+        <span> Doctors</span>
+      </div>
+      <div class="icon-links" routerLink="/admin/adduser">
+        <fa-icon [icon]="add" class="icons link-icon"></fa-icon>
+        <span>Add user</span>
+      </div>
+      <div class="icon-links block">
+        <fa-icon [icon]="block" class="icons link-icon"></fa-icon>
+        <span>Block</span>
+      </div>
+      <div class="icon-links logout">
+        <fa-icon [icon]="logout" class="icons link-icon"></fa-icon>
+        <span>Logout</span>
+      </div>
+
+  </div>
+</div>

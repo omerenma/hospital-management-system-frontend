@@ -6,6 +6,12 @@ import { AdminComponent } from './admin.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TopbarComponent } from './topbar/topbar.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { UsersComponent } from './users/users.component';
+import { AdminUserComponent } from './admin-user/admin-user.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { ChartModule } from 'angular-highcharts';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -13,11 +19,17 @@ import { TopbarComponent } from './topbar/topbar.component';
     AdminComponent,
     HomeComponent,
     SidebarComponent,
-    TopbarComponent
+    TopbarComponent,
+    UsersComponent,
+    AdminUserComponent,
+    AddUserComponent
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FontAwesomeModule,
+    ChartModule,
+    NgxPaginationModule
   ]
 })
 export class AdminModule { }

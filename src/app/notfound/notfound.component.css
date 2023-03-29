@@ -1,6 +1,12 @@
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 300px auto;
+}
+a{
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
 }

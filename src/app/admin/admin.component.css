@@ -2,10 +2,8 @@
   display: flex;
 }
 .sidebar{
-  background-color: red;
   flex: 1;
 }
 .main{
-  background-color: blue;
   flex: 4;
 }
