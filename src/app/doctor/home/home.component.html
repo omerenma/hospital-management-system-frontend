@@ -1,78 +1,88 @@
 
-<div class="containers">
+<div class="containers" >
+  <span class="message" *ngIf="message" style="display: flex; justify-content: center; align-items: center;">{{message}}</span>
+
   <div class="switch">
     <mat-slide-toggle color="red"></mat-slide-toggle>
   </div>
   <div class="search-patient">
     <input type="search" name="" id="" title="search" placeholder="Search patient by admission number">
   </div>
-  <table class="patient-table">
-    <tr>
-      <th>Name</th>
-      <th>Location</th>
-      <th>Room admitted</th>
-      <th>Admission No.</th>
-      <th>ID no</th>
-      <th>Status</th>
-      <th>Add diagnosis</th>
-    </tr>
-    <tbody *ngFor="let item of collection | paginate: { itemsPerPage: 5, currentPage: p }">
-      <tr>
-        <td>John doe</td>
-        <td>Abuja</td>
-        <td>207</td>
-        <td>002343</td>
-        <td>256</td>
-        <td>Good</td>
-        <button type="button" (click)="showAddPatient()" >Add</button>
-      </tr>
+   <div *ngIf="patients$ | async as patients">
+    <div *ngIf="patients.length">
+      <table class="patient-table">
+        <tr>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Room admitted</th>
+          <th>Admission No.</th>
+          <th>ID no</th>
+          <th>Status</th>
+          <th>Add diagnosis</th>
+        </tr>
+        <tbody *ngFor="let patient of patients | paginate: { itemsPerPage: 5, currentPage: p }">
+          <tr>
+            <td>{{patient.name}}</td>
+            <td>{{patient.residential_address}}</td>
+            <td>{{patient.room_admitted}}</td>
+            <td>{{patient.admission_no}}</td>
+            <td>{{patient.id_no}}</td>
+            <td>{{patient.status}}</td>
+            <button type="button" (click)="showAddPatient(patient.email)" >Add</button>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-    </tbody>
 
-  </table>
   <pagination-controls (pageChange)="p = $event" class="pagination-control"></pagination-controls>
 
 <div class="form-container" *ngIf="close">
   <div class="add-patient-component" *ngIf="close">
     <div class="add-patient-header">
       <h2>Administered Treatment</h2>
-      <button type="button" class="close-add-patient" (click)="showAddPatient()">X</button>
+      <button type="button" class="close-add-patient" (click)="closeAdd()">X</button>
     </div>
 
-    <div class="form">
-      <form>
+    <div class="form" >
+      <form [formGroup]="form"  (ngSubmit)="onSubmit()">
         <div>
           <label for="name">Name of treatment</label>
-          <input title="name" type="text" name="" id="">
+          <input title="name" type="text" name="" id="" formControlName="treatment_name">
         </div>
         <div>
           <label for="name">Drug administered</label>
-          <input title="name" type="text" name="" id="">
+          <input title="name" type="text" name="" id="" formControlName="drug_administered">
         </div>
         <div>
           <label for="name">Doctor's name</label>
-          <input title="name" type="text" name="" id="">
+          <input title="name" type="text" name="" id="" formControlName="doctor_name">
         </div>
         <div>
           <label for="name">Describe treatment</label>
         </div>
         <div>
-          <textarea title="address" name="" id="" cols="30" rows="10"></textarea>
+          <textarea title="address" name="" id="" cols="30" rows="10" formControlName="description"></textarea>
         </div>
         <div>
           <label for="name">Status</label>
 
-          <input title="name" type="text" name="" id="">
+          <input title="name" type="text" name="" id="" formControlName="patient_status">
         </div>
         <div>
           <label for="name">Bill</label>
-          <input title="name" type="text" name="" id="">
+          <input title="name" type="text" name="" id="" formControlName="bill">
+        </div>
+        <div>
+          <label for="name">Paid</label>
+          <input title="name" type="text" name="" id="" formControlName="paid">
         </div>
         <div>
           <label for="name">Date</label>
-          <input title="name" type="date" name="" id="">
+          <input title="name" type="date" name="" id="" formControlName="date">
         </div>
-          <button type="button" class="submit" title="close">Submit</button>
+          <button class="submit" title="close">Submit</button>
       </form>
     </div>
   </div>

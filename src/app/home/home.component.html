@@ -1,4 +1,4 @@
-<div class="wrapper">
+<!-- <div class="wrapper">
   <div class="container">
     <div class="header">
       <span class="medical">Medical</span>
@@ -71,16 +71,19 @@
 </div>
 
 <div class="login-container" *ngIf="close" >
+  <form action="">
     <div class="login-item">
       <div class="cancel-button" >
         <button class="close" (click)="showLogin()">Close</button>
       </div>
       <div class="login-input">
         <h1>Login</h1>
-        <input type="text" placeholder="Enter email">
-        <input type="password" placeholder="Enter password">
+        <input type="text" placeholder="Enter email" formControlName="email">
+        <input type="password" placeholder="Enter password" formControlName="password">
         <button class="login-btn">Login</button>
         <span>Ask to be registered</span>
       </div>
     </div>
-</div>
+
+  </form>
+</div> -->

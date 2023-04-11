@@ -1,35 +1,9 @@
 <div class="container">
-  <div>
-    <table>
-      <tr class="appointment-header">
-        <th>Name of Doctor</th>
-        <th>Role</th>
-        <th>Specialty</th>
-        <th>Email</th>
-        <th>Book appointment</th>
-      </tr>
-      <tbody >
-        <tr class="appointment-item" >
-          <td>Dr. james</td>
-          <td>Doctor</td>
-          <td>Gynaecologist</td>
-          <td>drjames@gmail.com</td>
-          <button type="button" (click)="showBook()">Book</button>
-        </tr>
+<div>
+  <app-sidebar></app-sidebar>
+</div>
+<div class="main">
+  <router-outlet></router-outlet>
+</div>
 
-      </tbody>
-      </table>
-  </div>
-  </div>
-
-<div class="book" *ngIf="close">
-
-  <div class="book-container"  >
-    <h2 class="book-header" >Are  your sure you want to book an appoitment?</h2>
-    <input type="date" name="" id="" class="date" title="date">
-    <div class="book-btn">
-      <button type="button" (click)="showBook()">Close</button>
-      <button type="button">Book</button>
-    </div>
-  </div>
 </div>

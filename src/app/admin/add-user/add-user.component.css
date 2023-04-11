@@ -8,6 +8,10 @@
   position: relative;
   top: 25%; */
 }
+.form{
+  display: flex;
+  flex-direction: column;
+}
 .container h3{
   margin-bottom: 40px;
   font-weight: bolder;

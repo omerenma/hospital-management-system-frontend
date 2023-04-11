@@ -1,7 +1,8 @@
 .container {
   margin: 30px;
-  background-color: #ebedf9;
+  background-color: #203354;
   height: 70px;
+  color: #aaa;
 }
 .navigation {
   display: flex;

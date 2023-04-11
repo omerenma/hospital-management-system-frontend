@@ -12,6 +12,7 @@ import { AdminUserComponent } from './admin-user/admin-user.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ChartModule } from 'angular-highcharts';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -29,7 +30,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AdminRoutingModule,
     FontAwesomeModule,
     ChartModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class AdminModule { }

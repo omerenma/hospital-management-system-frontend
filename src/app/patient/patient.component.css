@@ -12,18 +12,19 @@
   position: relative;
   margin: 30px;
 } */
-table{
+/* table{
   margin: 0 auto;
   width: 80%;
 }
 .appointment-header{
-  background: #ebedf9;
+  background: #203354;;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   font-weight: bold;
   height: 70px;
   margin:20px;
+  color: #aaa;
 }
 .appointment-header span{
   font-weight: 900;
@@ -104,4 +105,15 @@ table{
 }
 .book-btn button:last-child {
   background-color: #00adb5;
+} */
+
+.container {
+  display: flex;
+}
+.sidebar{
+  flex: 1;
+}
+.main{
+  flex: 4;
+
 }
