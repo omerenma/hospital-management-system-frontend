@@ -8,7 +8,7 @@ import {FormGroup, FormControl, Validators} from '@angular/forms'
 })
 export class DoctorComponent implements OnInit {
   constructor(){}
-
+  searchText = "";
   ngOnInit(): void {
 
 

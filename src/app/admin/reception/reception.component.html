@@ -1,0 +1,105 @@
+<span class="message" *ngIf="message" style="display: flex; justify-content: center; align-items: center;">{{message}}</span>
+<div class="container" *ngIf="patients$ | async as patients">
+  <div *ngIf="patients.length">
+    <div>
+<div  *ngIf="faUser" >
+  <div class="navigation">
+    <span>Patients</span>
+    <span>Doctors</span>
+    <fa-icon [icon]="faUser" class="icon"></fa-icon>
+    <span class="welcome">Welcome Jane Doe</span>
+    <span>Logout</span>
+  </div>
+  <div class="search-patient" >
+    <input type="search" name="" id="" title="search" placeholder="Search patient by admission number" [(ngModel)]="searchText">
+  </div>
+  <div class="add-patient">
+    <!-- <div class="plus">+</div> -->
+    <button type="button" class="add" (click)="showAddPatient()">Add patient</button>
+  </div>
+    <table class="patient-table" >
+      <tr>
+        <th>Name</th>
+        <th>Patient's address</th>
+        <th>Room admitted</th>
+        <th>Admission No.</th>
+        <th>ID no</th>
+        <th>Status</th>
+      </tr>
+        <!-- <tbody *ngFor="let item of patients | paginate : { itemsPerPage: 8, currentPage: p } | search:searchText"> -->
+          <tbody
+        *ngFor="let item of patients | paginate : { itemsPerPage: 8, currentPage: p }">
+          <tr>
+            <td>{{item.name}}</td>
+            <td>{{item.residential_address}}</td>
+            <td>{{item.room_admitted}}</td>
+            <td>{{item.admission_no}}</td>
+            <td>{{item.id_no}}</td>
+            <td>{{item.status}}</td>
+          </tr>
+        </tbody>
+
+    </table>
+
+
+  <pagination-controls (pageChange)="p = $event" class="pagination-control"></pagination-controls>
+</div>
+</div>
+</div>
+</div>
+
+<div class="form-container" *ngIf="close">
+  <div class="add-patient-component" *ngIf="close">
+    <div class="add-patient-header">
+      <h2>Add patient</h2>
+      <button type="button" class="close-add-patient" (click)="showAddPatient()">X</button>
+    </div>
+
+
+    <div class="form">
+      <form action="" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="name">Name</label>
+          <input title="name" type="text" name="" id="" formControlName="name">
+        </div>
+        <div>
+          <label for="name">Email</label>
+          <input title="name" type="email" name="" id="" formControlName="email">
+        </div>
+        <div>
+          <label for="name">Phone number</label>
+          <input title="name" type="text" name="" id="" formControlName="phone_no">
+        </div>
+        <div>
+          <label for="name">Residential address</label>
+          <input title="address" name="" id="" cols="30" rows="10" formControlName="residential_address">
+        </div>
+        <div>
+          <label for="name">Admission No.</label>
+          <input title="name" type="text" name="" id="" formControlName="admission_no">
+        </div>
+        <div>
+          <label for="name">Room No.</label>
+          <input title="name" type="text" name="" id="" formControlName="room_admitted">
+        </div>
+        <div>
+          <label for="name">ID No.</label>
+          <input title="name" type="text" name="" id="" formControlName="id_no">
+        </div>
+        <div>
+          <label for="name">Next of kin</label>
+          <input title="name" type="text" name="" id="" formControlName="next_of_kin_name">
+        </div>
+        <div>
+          <label for="name">Next of phone number</label>
+          <input title="name" type="text" name="" id="" formControlName="next_of_kin_phone_no">
+        </div>
+        <div>
+          <label for="name">Status</label>
+          <input title="name" type="text" name="" id="" formControlName="status">
+        </div>
+          <button  class="submit" title="close">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'angular-highcharts';
+import { Observable } from 'rxjs';
+import { RegisterUser } from 'src/app/interfaces/users';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +10,14 @@ import { Chart } from 'angular-highcharts';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
-  constructor(){}
+  constructor(private authService: AuthService){}
   p: number = 1;
   collection: any[] = [4];
+  users$!:Observable<RegisterUser[]>
+
+
   ngOnInit(): void {
+    this.getAllUsers()
 
   }
   donutCharts = new Chart({
@@ -71,4 +78,8 @@ export class HomeComponent implements OnInit{
       } as any
     ]
   })
+  getAllUsers(){
+   this.users$ =  this.authService.getUsers()
+
+  }
 }

@@ -9,7 +9,7 @@
   align-items: center;
   color: #fff;
   position:relative;
-  bottom: 40px;
+  /* bottom: 40px; */
 
 }
 span{
@@ -20,7 +20,7 @@ span:hover{
   color:#fff;
 }
 .nav{
-  padding:100px 50px;
+  /* padding:100px 50px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,7 +58,7 @@ left: -7px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  /* gap: 10px; */
 }
 .icon-links:hover{
   color: white;

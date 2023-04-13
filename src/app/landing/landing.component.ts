@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
-import { Store, select } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-// import { AuthStateInterface } from '../types/loginState.interface';
+import {ProgressSpinnerMode} from '@angular/material/progress-spinner'
+import {ThemePalette} from '@angular/material/core'
 import { loginLoading } from './state/auth.action.';
+import { getAuth } from './state/auth.selector';
 
 @Component({
   selector: 'app-landing',
@@ -15,18 +16,19 @@ import { loginLoading } from './state/auth.action.';
 export class LandingComponent implements OnInit {
   isLoading$!: Observable<boolean>
   loading$!: Observable<boolean>
-  constructor(private authService: AuthService, private store:Store<{email:string, password:string}>) {
-
+  constructor(private authService: AuthService, private store:Store<{}>) {
   }
   close: boolean = false;
-
   form!: FormGroup;
   email!: string;
   password!: string;
-
+  color: ThemePalette = 'primary'
+  mode: ProgressSpinnerMode = 'determinate'
+  value =  50
 
 
   ngOnInit(): void {
+
     setTimeout(() => {
       this.close = true;
     }, 3000);

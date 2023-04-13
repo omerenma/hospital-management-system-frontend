@@ -6,3 +6,9 @@ export interface Appointment {
   patient_email:string,
   issent?:number
 }
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+<span class="message" *ngIf="message" style="display: flex; justify-content: center; align-items: center;">{{message}}</span>
+
+<div class="container" *ngIf="doctors$ | async as doctors">
+  <div *ngIf="doctors.length">
+    <table>
+      <thead class="appointment-header">
+        <th>Name of Doctor</th>
+        <th>Role</th>
+        <!-- <th>Specialty</th> -->
+        <th>Email</th>
+        <th>Book appointment</th>
+      </thead>
+          <tbody *ngFor="let doctor of doctors | paginate: { itemsPerPage: 5, currentPage: p }">
+            <tr class="appointment-item" >
+              <td>{{doctor.name}}</td>
+              <td>{{doctor.role}}</td>
+              <td>{{doctor.email}}</td>
+              <button (click)="showBook(doctor.email)">Book</button>
+            </tr>
+          </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event" class="pagination-control"></pagination-controls>
+  </div>
+  </div>
+
+<div class="book" *ngIf="close">
+<form action="" [formGroup]="form" (ngSubmit)="bookAppointment()">
+    <div class="book-container">
+      <h2 class="book-header">Are your sure you want to book an appoitment?</h2>
+      <input type="date" name="" id="" class="date" title="date" placeholder="Date" formControlName="date">
+      <input type="text" name="" id="" class="date" title="name"  placeholder="Patient name"  formControlName="patient_name">
+      <input type="text" name="" id="" class="date" title="email" placeholder="Patient email address"  formControlName="patient_email">
+      <div class="book-btn">
+        <button (click)="closeBook()" type="button">Cancel</button>
+        <button>Book</button>
+      </div>
+    </div>
+</form>
+</div>
+
+
+

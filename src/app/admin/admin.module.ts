@@ -10,6 +10,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UsersComponent } from './users/users.component';
 import { AdminUserComponent } from './admin-user/admin-user.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import {HomeComponent as PatientHomeComponent} from './patient/home/home.component'
+import {ReceptionComponent} from './reception/reception.component'
 import { ChartModule } from 'angular-highcharts';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -23,7 +25,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TopbarComponent,
     UsersComponent,
     AdminUserComponent,
-    AddUserComponent
+    AddUserComponent,
+    PatientHomeComponent,
+    ReceptionComponent
   ],
   imports: [
     CommonModule,

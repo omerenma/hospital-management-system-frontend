@@ -1,4 +1,11 @@
-export interface AuthState {}
+import { AuthResponseData } from "./models/authResponseData"
+import { User } from "./models/user.model"
 
-export const initialState:AuthState = {}
+export interface AuthState {
+  user: User | null
+}
+
+export const initialState:AuthState = {
+  user: null
+}
 

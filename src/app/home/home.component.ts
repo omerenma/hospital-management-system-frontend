@@ -1,45 +1,30 @@
-// import { Component, OnInit } from '@angular/core';
-// import { AuthService } from '../services/auth.service';
-// import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component , OnInit} from '@angular/core';
+import { Router } from '@angular/router';
+import {Observable} from 'rxjs'
+import {Store} from '@ngrx/store'
+import { AppState } from '../store/app.state';
+import { getAuth } from './state/auth.selector';
 
-// @Component({
-//   selector: 'app-home',
-//   templateUrl: './home.component.html',
-//   styleUrls: ['./home.component.css']
-// })
-// export class HomeComponent implements OnInit {
-//   constructor(private authService:AuthService){}
-//   close:boolean = false
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
+})
+export class HomeComponent implements OnInit{
 
-//   form!:FormGroup
-//   email!:string
-//   password!:string
-
-//   ngOnInit(): void {
-//     setTimeout(() => {
-//       this.close = true
-//     }, 3000);
-
-//     this.form = new FormGroup({
-//       emaile: new FormControl(null, [Validators.required]),
-//       password: new FormControl(null, [Validators.required, Validators.email])
-
-//     })
-//   }
-//   showLogin(){
-//     this.close = !this.close
-//   }
-//   signIn(){
-//     this.email = this.form.value.email
-//     this.password = this.form.value.password
-
-//     const data ={
-//       email:this.email,
-//       password:this.password
-//     }
-//      this.authService.loginUser(data).subscribe(value => {
-//       console.log(value)
-//      })
-//   }
-// }
-
+constructor(private router: Router, private store:Store<AppState>){}
+  auth$!: Observable<{}>;
+ngOnInit(): void {
+ this.store.select(getAuth).subscribe(data => {
+  if(data.role === "admin"){
+    this.router.navigate(["/admin"])
+  }
+  if(data.role === "doctor"){
+    this.router.navigate(['/doctor'])
+  }
+  if(data.role === "reception"){
+    this.router.navigate(["/reception"])
+  }
+ })
+}
+}

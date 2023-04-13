@@ -1,0 +1,50 @@
+.charts{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px;
+}
+.pie{
+  height: 300px;
+  width: 500px;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  font-size: 20px;
+  font-weight: 900;
+}
+.line{
+  height: 300px;
+  width: 500px;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  font-size: 20px;
+  font-weight: 900;
+}
+table{
+  margin: 0 auto;
+  width: 80%;
+}
+.treatment-header{
+  background: #ebedf9;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-weight: 900;
+  height: 70px;
+  margin: 0 auto;
+}
+.treatment-header span{
+  font-weight: 900;
+  font-size: 15px;
+}
+.treatment-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-weight: 900;
+  margin:10px;
+}
+.pagination-control{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
