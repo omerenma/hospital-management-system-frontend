@@ -16,6 +16,9 @@ constructor(private router: Router, private store:Store<AppState>){}
   auth$!: Observable<{}>;
 ngOnInit(): void {
  this.store.select(getAuth).subscribe(data => {
+  if(!data){
+    this.router.navigate(["/unauthorised"])
+  }
   if(data.role === "admin"){
     this.router.navigate(["/admin"])
   }
@@ -28,3 +31,4 @@ ngOnInit(): void {
  })
 }
 }
+

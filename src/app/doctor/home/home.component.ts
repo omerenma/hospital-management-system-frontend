@@ -6,6 +6,9 @@ import { Diagnosis } from 'src/app/interfaces/diagnosis';
 import { PatientsService } from 'src/app/services/patients.service';
 import {FormGroup, FormControl, Validators} from '@angular/forms'
 import { DiagnosisService } from 'src/app/services/diagnosis.service';
+import {Store} from '@ngrx/store'
+import {Router} from '@angular/router'
+import { getAuth } from 'src/app/landing/state/auth.selector';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +16,7 @@ import { DiagnosisService } from 'src/app/services/diagnosis.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
-  constructor(private patients: PatientsService, private diagnosis:DiagnosisService){}
+  constructor(private patients: PatientsService, private diagnosis:DiagnosisService, private store:Store, private router:Router){}
   form!:FormGroup
   patients$!: Observable<Patient[]>
   close:boolean = false
@@ -45,6 +48,11 @@ export class HomeComponent implements OnInit{
   getPatients(){this.patients$ =  this.patients.getPatient()}
 
   ngOnInit(): void {
+    this.store.select(getAuth).subscribe(data => {
+      if(!data){
+        this.router.navigate(["/unauthorised"])
+      }
+    })
     this.getPatients()
 
     this.form = new FormGroup({

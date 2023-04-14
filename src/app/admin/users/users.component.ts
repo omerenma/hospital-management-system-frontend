@@ -12,6 +12,7 @@ export class UsersComponent implements OnInit {
   p: number = 1
   openModal:boolean = false
   close:boolean = false;
+  searchText = "";
   constructor(private users:AuthService){
   }
   users$!: Observable<RegisterUser[]>

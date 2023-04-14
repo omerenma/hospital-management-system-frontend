@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container" *ngIf="name">
   <div class="nav">
     <div class="header">
       <fa-icon [icon]="faUser" class="icon"></fa-icon>
-      <h3 class="name">Onyebuchi Kingsley</h3>
+      <h3 class="name">{{name}}</h3>
     </div>
       <div class="icon-links" routerLink="/admin">
         <fa-icon [icon]="home" class="icons link-icon"></fa-icon>
@@ -34,7 +34,7 @@
       </div>
       <div class="icon-links logout">
         <fa-icon [icon]="logout" class="icons link-icon"></fa-icon>
-        <span>Logout</span>
+        <span (click)="logOut()">Logout</span>
       </div>
 
   </div>

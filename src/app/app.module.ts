@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {StoreModule} from '@ngrx/store'
 import {StoreDevtoolsModule} from '@ngrx/store-devtools'
 import { EffectsModule } from '@ngrx/effects';
-import { AuthReducer } from './landing/state/auth.reducers';
+import { AuthReducer, clearState } from './landing/state/auth.reducers';
 import { AuthEffects } from './landing/state/auth.effects';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { UnauthorisedComponent } from './unauthorised/unauthorised.component';
@@ -31,7 +31,7 @@ import { appReducer } from './store/app.state';
     ReactiveFormsModule,
     FormsModule,
     EffectsModule.forRoot([AuthEffects]),
-    StoreModule.forRoot(appReducer),
+    StoreModule.forRoot(appReducer, {metaReducers:[clearState]}),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: false,

@@ -3,7 +3,7 @@
   <div *ngIf="users.length">
     <div>
       <div class="search">
-        <input type="search" name="" id="" placeholder="Search user by id no" />
+        <input type="search" title="search" name="" id="" placeholder="Search user by id name" [(ngModel)]="searchText" />
       </div>
       <table>
         <thead class="users-header">
@@ -12,7 +12,7 @@
           <th>Role</th>
           <th>Delete</th>
         </thead>
-        <tbody *ngFor="let item of users | paginate : { itemsPerPage: 5, currentPage: p }">
+        <tbody *ngFor="let item of users | paginate : { itemsPerPage: 5, currentPage: p } ">
           <tr class="users-body">
             <td>{{ item.name }}</td>
             <td>{{ item.email }}</td>

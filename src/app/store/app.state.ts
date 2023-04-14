@@ -1,4 +1,5 @@
-import {AuthReducer} from '../landing/state/auth.reducers'
+import {AuthReducer, clearState } from '../landing/state/auth.reducers'
+import { clearStore } from '../landing/state/auth.selector';
 
 export interface AppState {
   user:{
@@ -10,5 +11,6 @@ export interface AppState {
 }
 
 export const appReducer = {
-  auth:AuthReducer
+  auth:AuthReducer,
+
 }

@@ -15,6 +15,9 @@ export class SearchPipe implements PipeTransform {
         if(!item.admission_no.toLocaleLowerCase().indexOf(filterText.toLocaleLowerCase())){
           filtered.push(item)
         }
+        if(!item.name.toLocaleLowerCase().indexOf(filterText.toLocaleLowerCase())){
+          filtered.push(item)
+        }
       }
       return filtered
   }

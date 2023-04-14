@@ -13,6 +13,9 @@ export class DiagnosisService {
   getDiagnosisForUser(email:string): Observable<Diagnosis>{
     return this.http.post<Diagnosis>("http://localhost:5000/api/diagnosis/user", {email})
   }
+  getAllDiagnosis(){
+    return this.http.get<Diagnosis[]>("http://localhost:5000/diagnosis/all-diagnosis")
+  }
 
   addTreatment(data:Diagnosis): Observable<{message:string}>{
     return this.http.post<{message:string}>("http://localhost:5000/diagnosis/add", data)

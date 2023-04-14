@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import {Store} from '@ngrx/store'
+import {Router} from '@angular/router'
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PatientsService } from '../services/patients.service';
 import {Observable} from 'rxjs'
 import { Patient } from '../interfaces/patient';
+import { getAuth } from '../landing/state/auth.selector';
 
 @Component({
   selector: 'app-reception',
@@ -11,12 +14,13 @@ import { Patient } from '../interfaces/patient';
   styleUrls: ['./reception.component.css'],
 })
 export class ReceptionComponent implements OnInit {
-  constructor(private patient: PatientsService, private getPatient:PatientsService) {  }
+  constructor(private patient: PatientsService, private getPatient:PatientsService, private stroe:Store, private router:Router) {  }
   patients$!: Observable<Patient[]>
   patients: Patient[] = []
   form!: FormGroup;
   message!:string
   searchText = "";
+  receptionist_name!:string
 
 
   close: boolean = false;
@@ -34,6 +38,13 @@ export class ReceptionComponent implements OnInit {
   status!: string;
 
   ngOnInit(): void {
+    this.stroe.select(getAuth).subscribe(data => {
+      if(!data){
+        console.log("No data in state")
+        this.router.navigate(["/unauthorised"])
+      }
+      this.receptionist_name = data.name
+    })
      this.getAllPatients()
     this.form = new FormGroup({
       name: new FormControl(null, [Validators.required]),

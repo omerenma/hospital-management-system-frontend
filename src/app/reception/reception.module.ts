@@ -12,7 +12,7 @@ import { SearchPipe } from '../pipes/search.pipe';
 @NgModule({
   declarations: [
     ReceptionComponent,
-    SearchPipe
+     SearchPipe
   ],
   imports: [
     CommonModule,

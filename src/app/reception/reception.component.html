@@ -3,12 +3,12 @@
   <div *ngIf="patients.length">
     <div>
 <div  *ngIf="faUser" >
-  <div class="navigation">
+  <div class="navigation" *ngIf="receptionist_name">
     <span>Patients</span>
     <span>Doctors</span>
     <fa-icon [icon]="faUser" class="icon"></fa-icon>
-    <span class="welcome">Welcome Jane Doe</span>
-    <span>Logout</span>
+    <span class="welcome">Welcome {{receptionist_name}}</span>
+    <span >Logout</span>
   </div>
   <div class="search-patient" >
     <input type="search" name="" id="" title="search" placeholder="Search patient by admission number" [(ngModel)]="searchText">

@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'angular-highcharts';
 import { Observable } from 'rxjs';
+import { Diagnosis } from 'src/app/interfaces/diagnosis';
 import { RegisterUser } from 'src/app/interfaces/users';
 import { AuthService } from 'src/app/services/auth.service';
+import { DiagnosisService } from 'src/app/services/diagnosis.service';
+import {Store} from '@ngrx/store'
+import { getAuth } from 'src/app/landing/state/auth.selector';
+import { Router} from '@angular/router'
 
 @Component({
   selector: 'app-home',
@@ -10,14 +15,22 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService, private diagnosis:DiagnosisService, private store:Store, private router:Router){}
   p: number = 1;
   collection: any[] = [4];
   users$!:Observable<RegisterUser[]>
+  diagnosis$!:Observable<Diagnosis[]>
+  diagn: Diagnosis[] = []
 
 
   ngOnInit(): void {
+    this.store.select(getAuth).subscribe(data => {
+      if(!data){
+        this.router.navigate(["/unauthorised"])
+      }
+    })
     this.getAllUsers()
+   this.getDiagnosis()
 
   }
   donutCharts = new Chart({
@@ -42,7 +55,7 @@ export class HomeComponent implements OnInit{
     title:{
       verticalAlign:'middle',
       floating:true,
-      text:'Lab test'
+      text:'Diagnosis'
     },
     legend:{
       enabled:false
@@ -57,6 +70,7 @@ export class HomeComponent implements OnInit{
           {name:'Diaphorea', y:4, color:'#eeeeee'},
           {name:'Mental Issue', y:5, color:'#506ef9'}
         ]
+
       }
     ]
   })
@@ -81,5 +95,8 @@ export class HomeComponent implements OnInit{
   getAllUsers(){
    this.users$ =  this.authService.getUsers()
 
+  }
+  getDiagnosis(){
+   this.diagnosis.getAllDiagnosis().subscribe(data => this.diagn = data)
   }
 }
