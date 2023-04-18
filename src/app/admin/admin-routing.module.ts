@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import {ReceptionComponent} from './reception/reception.component'
 import {HomeComponent as PatientHomeComponent} from './patient/home/home.component'
+import { AdmissionsComponent } from './admissions/admissions.component';
 
 const routes: Routes = [
   { path: '', component: AdminComponent,
@@ -14,7 +15,8 @@ children:[
   {path:"users", component:UsersComponent},
   {path:"patient", component:PatientHomeComponent},
   {path:"adduser", component:AddUserComponent},
-  {path:"reception", component:ReceptionComponent}
+  {path:"reception", component:ReceptionComponent},
+  {path:'admissions', component:AdmissionsComponent}
 
 ]
  }

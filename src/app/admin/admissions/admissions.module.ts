@@ -1,26 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ReceptionRoutingModule } from './reception-routing.module';
-import { ReceptionComponent } from './reception.component';
+import { AdmissionsRoutingModule } from './admissions-routing.module';
+import { AdmissionsComponent } from './admissions.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SearchPipe } from '../../pipes/search.pipe';
 
 
 @NgModule({
   declarations: [
-    ReceptionComponent,
-    SearchPipe
+    // AdmissionsComponent
   ],
   imports: [
     CommonModule,
-    ReceptionRoutingModule,
+    AdmissionsRoutingModule,
     FontAwesomeModule,
     NgxPaginationModule,
-    ReactiveFormsModule,
     FormsModule,
+    ReactiveFormsModule
   ]
 })
-export class ReceptionModule { }
+export class AdmissionsModule { }
