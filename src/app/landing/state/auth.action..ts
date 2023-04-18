@@ -3,10 +3,7 @@ import { User } from './models/user.model';
 export const LOGIN_LOADING = '[auth] login loading';
 export const LOGIN_SUCCESS = '[auth] login success';
 export const LOGIN_FAILURE = '[auth] login failure';
-export const AUTHENTICATE_SUCCESS = 'authenticate success';
 export const LOGOUT = '[LOGOUT] Logout';
-export const SIGNUP_START = '[Auth] Signup Start';
-export const AUTO_LOGIN = '[Auth] Auto Login';
 
 export const loginLoading = createAction(
   LOGIN_LOADING,

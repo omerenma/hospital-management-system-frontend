@@ -1,6 +1,7 @@
+
 <span class="message" *ngIf="message" style="display: flex; justify-content: center; align-items: center;">{{message}}</span>
-<div class="container" *ngIf="patients$ | async as patients">
-  <div *ngIf="patients.length">
+<div class="container" *ngIf="patients$ | async as patients" >
+  <div >
     <div>
 <div  *ngIf="faUser" >
   <div class="navigation" *ngIf="receptionist_name">
@@ -20,21 +21,19 @@
     <table class="patient-table" >
       <tr>
         <th>Name</th>
+        <th>Sex</th>
+        <th>Age</th>
+        <th>Hospital card number</th>
         <th>Patient's address</th>
-        <th>Room admitted</th>
-        <th>Admission No.</th>
-        <th>ID no</th>
-        <th>Status</th>
+
       </tr>
-        <tbody
-        *ngFor="let item of patients | paginate : { itemsPerPage: 8, currentPage: p } | search:searchText">
+        <tbody  *ngFor="let patient of patients | paginate : { itemsPerPage: 8, currentPage: p } | search:searchText">
           <tr>
-            <td>{{item.name}}</td>
-            <td>{{item.residential_address}}</td>
-            <td>{{item.room_admitted}}</td>
-            <td>{{item.admission_no}}</td>
-            <td>{{item.id_no}}</td>
-            <td>{{item.status}}</td>
+             <td>{{patient.name}}</td>
+            <td>{{patient.sex}}</td>
+            <td>{{patient.dob}}</td>
+            <td>{{patient.residential_address}}</td>
+            <!-- <td>{{patient.patient_id}}</td> -->
           </tr>
         </tbody>
 
@@ -61,6 +60,18 @@
           <label for="name">Name</label>
           <input title="name" type="text" name="" id="" formControlName="name">
         </div>
+        <div class="gender">
+          <label for="name">Gender</label>
+          <select  name="select" id="select" title="select" (change)="selectSex($event)">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <!-- <input title="name" type="text" name="" id="" formControlName="sex"> -->
+        </div>
+        <div>
+          <label for="name">Date of birth</label>
+          <input title="name" type="date" name="" id="" formControlName="dob">
+        </div>
         <div>
           <label for="name">Email</label>
           <input title="name" type="email" name="" id="" formControlName="email">
@@ -73,17 +84,10 @@
           <label for="name">Residential address</label>
           <input title="address" name="" id="" cols="30" rows="10" formControlName="residential_address">
         </div>
+
         <div>
-          <label for="name">Admission No.</label>
-          <input title="name" type="text" name="" id="" formControlName="admission_no">
-        </div>
-        <div>
-          <label for="name">Room No.</label>
-          <input title="name" type="text" name="" id="" formControlName="room_admitted">
-        </div>
-        <div>
-          <label for="name">ID No.</label>
-          <input title="name" type="text" name="" id="" formControlName="id_no">
+          <label for="name">Date</label>
+          <input title="name" type="date" name="" id="" formControlName="date">
         </div>
         <div>
           <label for="name">Next of kin</label>
@@ -93,10 +97,7 @@
           <label for="name">Next of phone number</label>
           <input title="name" type="text" name="" id="" formControlName="next_of_kin_phone_no">
         </div>
-        <div>
-          <label for="name">Status</label>
-          <input title="name" type="text" name="" id="" formControlName="status">
-        </div>
+
           <button  class="submit" title="close">Submit</button>
       </form>
     </div>

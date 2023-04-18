@@ -21,10 +21,9 @@
       <tr>
         <th>Name</th>
         <th>Patient's address</th>
-        <th>Room admitted</th>
-        <th>Admission No.</th>
-        <th>ID no</th>
-        <th>Status</th>
+        <th>Gender</th>
+        <th>Date of birth</th>
+        <th>Hospital number</th>
       </tr>
         <!-- <tbody *ngFor="let item of patients | paginate : { itemsPerPage: 8, currentPage: p } | search:searchText"> -->
           <tbody
@@ -32,10 +31,9 @@
           <tr>
             <td>{{item.name}}</td>
             <td>{{item.residential_address}}</td>
-            <td>{{item.room_admitted}}</td>
-            <td>{{item.admission_no}}</td>
-            <td>{{item.id_no}}</td>
-            <td>{{item.status}}</td>
+            <td>{{item.sex}}</td>
+            <td>{{item.dob}}</td>
+            <!-- <td>{{item.hospital_card_no}}</td> -->
           </tr>
         </tbody>
 
@@ -94,10 +92,7 @@
           <label for="name">Next of phone number</label>
           <input title="name" type="text" name="" id="" formControlName="next_of_kin_phone_no">
         </div>
-        <div>
-          <label for="name">Status</label>
-          <input title="name" type="text" name="" id="" formControlName="status">
-        </div>
+        >
           <button  class="submit" title="close">Submit</button>
       </form>
     </div>

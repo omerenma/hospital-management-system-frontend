@@ -1,0 +1,82 @@
+
+<div class="container" *ngIf="admissions$ | async as admissions">
+  <div >
+    <div>
+<div>
+  <div class="navigation">
+    <span>Patients</span>
+    <span>Doctors</span>
+    <fa-icon [icon]="faUser" class="icon"></fa-icon>
+    <span class="welcome">Welcome Kings</span>
+    <span >Logout</span>
+  </div>
+  <div class="search-patient" >
+    <input type="search" name="" id="" title="search" placeholder="Search patient by admission number" [(ngModel)]="searchText">
+  </div>
+  <div class="add-patient">
+    <!-- <div class="plus">+</div> -->
+    <button type="button" class="add" (click)="showAddPatient()">Add admission</button>
+  </div>
+    <table class="patient-table"  >
+      <tr>
+        <th>Name</th>
+        <th>Patient's card no.</th>
+        <th>Sex</th>
+        <th>date of birth</th>
+        <!-- <th>Address</th> -->
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Next of kin</th>
+        <th>Next of kin phone number</th>
+
+      </tr>
+        <tbody *ngFor="let admission of admissions | paginate : { itemsPerPage: 8, currentPage: p }">
+          <tr>
+            <td>{{admission.name}}</td>
+            <td>{{admission.patients_id}}</td>
+            <td>{{admission.sex}}</td>
+            <td>{{admission.dob}}</td>
+            <!-- <td>{{admission.}}</td> -->
+            <td>{{admission.email}}</td>
+            <td>{{admission.phone_no}}</td>
+            <td>{{admission.next_of_kin_name}}</td>
+            <td>{{admission.next_of_kin_phone_no}}</td>
+          </tr>
+        </tbody>
+
+    </table>
+
+
+  <pagination-controls (pageChange)="p = $event" class="pagination-control"></pagination-controls>
+</div>
+</div>
+</div>
+</div>
+
+<div class="form-container" *ngIf="close">
+  <div class="add-patient-component" *ngIf="close">
+    <div class="add-patient-header">
+      <h2>Add admission</h2>
+      <button type="button" class="close-add-patient" (click)="showAddPatient()">X</button>
+    </div>
+
+
+    <div class="form">
+      <form action="" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="name">Card number</label>
+          <input title="name" type="text" name="" id="" formControlName="card_number">
+        </div>
+        <div>
+          <label for="name">Date of admission</label>
+          <input title="name" type="date" name="" id="" formControlName="admission_date">
+        </div>
+        <div>
+          <label for="name">Date of discharged</label>
+          <input title="name" type="date" name="" id="" formControlName="discharged_date">
+        </div>
+          <button  class="submit" title="close">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

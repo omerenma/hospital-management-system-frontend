@@ -12,9 +12,9 @@ export class SearchPipe implements PipeTransform {
       }
       let filtered:Patient[]=[]
       for (let item of value){
-        if(!item.admission_no.toLocaleLowerCase().indexOf(filterText.toLocaleLowerCase())){
-          filtered.push(item)
-        }
+        // if(!item.hospital_card_no.toLocaleLowerCase().indexOf(filterText.toLocaleLowerCase())){
+        //   filtered.push(item)
+        // }
         if(!item.name.toLocaleLowerCase().indexOf(filterText.toLocaleLowerCase())){
           filtered.push(item)
         }

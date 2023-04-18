@@ -71,15 +71,14 @@ export class ReceptionComponent implements OnInit {
 
     const data = {
       name: this.form.value.name,
+      sex:this.form.value.sex,
+      dob:this.form.value.dob,
       email: this.form.value.email,
       phone_no: this.form.value.phone_no,
+      date:this.form.value.date,
       residential_address: this.form.value.residential_address,
-      room_admitted: this.form.value.room_admitted,
-      id_no: this.form.value.id_no,
-      admission_no: this.form.value.admission_no,
       next_of_kin_name: this.form.value.next_of_kin_name,
       next_of_kin_phone_no: this.form.value.next_of_kin_phone_no,
-      status:this.form.value.status
     };
     this.patient.addPatient(data).subscribe(value => {
     this.message = value.message

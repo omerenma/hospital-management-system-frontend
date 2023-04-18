@@ -43,6 +43,7 @@ const routes: Routes = [
       import('./landing/landing.module').then((m) => m.LandingModule),
   },
   { path: 'unauthorised', component: UnauthorisedComponent },
+  { path: 'admissions', loadChildren: () => import('./admissions/admissions.module').then(m => m.AdmissionsModule) },
   { path: '**', component: NotfoundComponent },
 ];
 

@@ -12,17 +12,16 @@ const _authReducer = createReducer(initialState, on(loginSuccess, (state, action
   }
 }))
 
+
 export function AuthReducer(state:any, action:any){
   return _authReducer(state, action)
 }
 
 
-export function clearState(reducer:any){
-  return function (state:any, action:Action){
-    if(action.type === LOGOUT){
-    return  clearStore
-    }
 
-    return reducer(state, action)
-  }
-}
+// export function logout(state:AppState, action:Action){
+//   if(action.type === LOGOUT){
+//     console.log('Logging out!')
+//   }
+
+// }

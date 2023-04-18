@@ -23,11 +23,10 @@
         <tbody *ngFor="let patient of patients | paginate: { itemsPerPage: 5, currentPage: p } ">
           <tr>
             <td>{{patient.name}}</td>
+            <td>{{patient.sex}}</td>
+            <td>{{patient.dob}}</td>
             <td>{{patient.residential_address}}</td>
-            <td>{{patient.room_admitted}}</td>
-            <td>{{patient.admission_no}}</td>
-            <td>{{patient.id_no}}</td>
-            <td>{{patient.status}}</td>
+            <!-- <td>{{patient.hospital_card_no}}</td> -->
             <button type="button" (click)="showAddPatient(patient.email)" >Add</button>
           </tr>
         </tbody>
